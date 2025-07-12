@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="win98.css"/>
-</head>
-<body>
-    <div id="boot-screen"></div>
-</body>
+    <link rel="stylesheet" href="win98.css" />
+  </head>
+  <body>
+     <div id="boot-screen"></div>
+    <audio id="bootSound" autoplay>
+      <source src="assets/win98-sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div id="desktop">
+      <div class="icon">
+      <img src="assets/mycomputer.png" alt="mycomputer"/>
+      <span>My Computer</span>
+      </div>
+      <div class="icon">
+        <img src="assets/folder.png" alt="folder"/>
+        <span>My Documents</span>
+      </div>
+       <div class="icon">
+        <img src="assets/network.png  " alt="network"/>
+        <span>Network <br> Neighborhood</span>
+       </div>
+       <div class="icon">
+        <img src="assets/recyclebin.png" alt="bin"/>
+        <span>Recycle Bin</span>
+       </div>
+       <div class="icon">
+        <img src="assets/explorer.png" alt="explorer"/>
+        <span>Internet <br> Explorer</span>
+       </div>
+    </div>
+    
+  </body>
+
+  
+  <script>
+  const audio = document.getElementById("bootSound");
+
+  audio.play().catch(() => {
+    document.addEventListener("click", () => {
+      audio.play();
+    }, { once: true });
+  });
+
+  
+  audio.addEventListener("ended", () => {
+    document.getElementById("boot-screen").style.display = "none";
+    document.getElementById("desktop").style.display = "block";
+  });
+</script>
+
 </html>
