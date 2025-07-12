@@ -104,6 +104,6 @@
 
 .os-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 12px 3px rgba(0, 255, 255, 0.7); /* glowing aqua shine */
-  border-color: #00ffff; /* neon cyan border */
+  box-shadow: 0 0 12px 3px rgba(0, 255, 255, 0.7); 
+  border-color: #00ffff; 
 }
