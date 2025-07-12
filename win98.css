@@ -1,6 +1,47 @@
-*{
-    margin:0;
-    padding:0;
-    background-color: #008080;
-    height:100wh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#boot-screen {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("assets/98startup.png");
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#desktop{
+    width:100vw;
+    height:100vh;
+    background-color: #008080;
+    position:relative;
+    overflow: hidden;
+}
+
+.icon{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width: 150px;
+    font-family: 'Tahoma', sans-serif;
+    color:white;
+    font-size: 13px;
+    text-align:center;
+}
+
+.icon img {
+  width: 108px;
+height: 100px;
+
+
+}
+
