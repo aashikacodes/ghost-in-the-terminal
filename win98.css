@@ -36,12 +36,37 @@ html, body {
     color:white;
     font-size: 13px;
     text-align:center;
+    gap:0;
+
 }
 
 .icon img {
   width: 108px;
 height: 100px;
-
+object-fit: contain;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  display: block;
+  
+  
 
 }
+.icon1{
+    width: 98px;
+height: 90px;
+object-fit: contain;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  display: block;
+}
+
+.icon-label {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: 'Tahoma', sans-serif;
+    color:white;
+    font-size: 13px;
+}
+
 
