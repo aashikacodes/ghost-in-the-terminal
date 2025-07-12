@@ -1,0 +1,109 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tahoma', sans-serif;
+    }
+
+    body {
+      background-color: #081421;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #00ffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    .os-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1600px;
+      padding: 0 2px;
+      margin-top:350;
+    }
+
+    .os-card {
+      background-color: #121b2f;
+      border-radius: 10px;
+      border:2px solid #00ffff;
+      padding: 16px 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      width:300px;
+      overflow: hidden;
+      height:240px;
+
+    }
+
+    os-card:hover {
+       background-color: rgba(255, 255, 255, 0.05);
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    }
+
+    .os-card img{
+        width: 150px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 2px;
+      image-rendering: pixelated;
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: center;
+    }
+
+    .os-name {
+     font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .tagline {
+       font-size: 13px;
+      color: #b0c4ff;
+    }
+
+    footer {
+      margin-top: 350px;
+      font-size: 12px;
+      color: #5fc3ff;
+
+    }
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #00ffff;
+  }
+  50% {
+    box-shadow: 0 0 15px #00ffff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ffff;
+  }
+}
+
+.os-card:hover {
+  animation: glow infinite;
+}
+
+.os-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 12px 3px rgba(0, 255, 255, 0.7); /* glowing aqua shine */
+  border-color: #00ffff; /* neon cyan border */
+}
