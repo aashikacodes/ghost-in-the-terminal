@@ -5,14 +5,36 @@ import json
 import google.generativeai as genai
 
 load_dotenv()
+app = Flask(__name__, template_folder="templates", static_folder="static")
+
 app = Flask(__name__)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("models/gemini-2.5-pro")
 
 @app.route("/")
-def serve_html():
-    return render_template("HOSB.html")
+def index():
+    return render_template("index.html")
+@app.route("/hos1")
+def hos1():
+    return render_template("HOS1.html")
+@app.route("/hmain")
+def hmain():
+    return render_template("Hmain.html")
 
+@app.route("/macos")
+def macos():
+    return render_template("macos.html")
+
+@app.route("/win98")
+def win98():
+    return render_template("win98.html")
+@app.route("/notes")
+def notes():
+    return render_template("fairynotes.html")
+
+@app.route("/browser")
+def browser():
+    return render_template("HOSB.html")
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()
@@ -44,6 +66,36 @@ Style Guide:
     except Exception as e:
         print(f"Error from Gemini API: {e}")
         return jsonify({"response": f"Error: {str(e)}"}), 500
+DATA_FILE = "notes.json"
 
+@app.route("/leave", methods=["POST"])
+def leave_note():
+    data = request.get_json()
+    note = {
+        "content": data.get("content", ""),
+        "os": data.get("os", "hauntos")
+    }
+
+    notes = []
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, "r") as f:
+            notes = json.load(f)
+
+    notes.append(note)
+
+    with open(DATA_FILE, "w") as f:
+        json.dump(notes, f, indent=2)
+
+    return jsonify({"message": "Note saved 👻"})
+
+@app.route("/get-notes", methods=["GET"])
+def get_notes():
+    os_type = request.args.get("os", "hauntos")
+    if not os.path.exists(DATA_FILE):
+        return jsonify({"notes": []})
+    with open(DATA_FILE, "r") as f:
+        all_notes = json.load(f)
+    filtered = [n for n in all_notes if n.get("os") == os_type]
+    return jsonify({"notes": filtered})
 if __name__ == "__main__":
     app.run(debug=True)

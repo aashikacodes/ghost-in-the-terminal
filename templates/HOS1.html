@@ -34,40 +34,46 @@
     </div>
 
     <script>
-      function startHaunt() {
-        document.getElementById("click-gate").style.display = "none";
+       function startHaunt() {
+    document.getElementById("click-gate").style.display = "none";
 
-        const bootSound = document.getElementById("bootSound");
-        const typingSound = document.getElementById("typingSound");
+    const bootSound = document.getElementById("bootSound");
+    const typingSound = document.getElementById("typingSound");
 
-        bootSound.volume = 0.6;
-        typingSound.volume = 0.4;
+    bootSound.volume = 0.6;
+    typingSound.volume = 0.4;
 
-        bootSound.currentTime = 0;
-        typingSound.currentTime = 0.3;
+    bootSound.currentTime = 0;
+    bootSound.play().catch((e) => {
+      console.warn("Boot sound failed:", e);
+    });
 
-        bootSound.play().catch((e) => {
-          console.warn("Boot sound failed:", e);
-        });
+    
+    const bootLines = document.querySelectorAll(".boot-text p");
+    bootLines.forEach((el) => (el.style.animationPlayState = "running"));
 
-        typingSound.play().catch((e) => {
-          console.warn("Typing sound failed:", e);
-        });
+    const delayPerLine = 1200; 
+    let currentLine = 0;
 
-review_this
-        document.querySelectorAll('.boot-text p')
-        .forEach(el => el.style.animationPlayState = 'running');
+   
+    function showNextLine() {
+      if (currentLine === 0) typingSound.play();
 
-        const totalLines = document.querySelectorAll(".boot-text p").length;
-        const typingDuration = 2 * 1000;
-        const delayPerLine = 1.2 * 1000;
-        const totalTime = (totalLines - 1) * delayPerLine + typingDuration;
-
-        setTimeout(() => {
-          typingSound.pause();
-          typingSound.currentTime = 0;
-        }, totalTime + 500);
+      if (currentLine < bootLines.length) {
+        bootLines[currentLine].classList.add("visible"); 
+        currentLine++;
+        setTimeout(showNextLine, delayPerLine);
+      } else {
+        typingSound.pause();
+        typingSound.currentTime = 0;
       }
+    }
+
+    showNextLine();
+  }
+   document.querySelector(".enter-button").addEventListener("click", () => {
+        window.location.href = "/hmain"; 
+      });
     </script>
   </body>
 </html>

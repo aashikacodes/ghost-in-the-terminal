@@ -97,7 +97,21 @@ button:hover {
   animation: flicker 3s infinite;
   padding: 40px;
 }
+.close-button {
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 999;
+}
 
+.close-button:hover {
+  color: red;
+}
 
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {

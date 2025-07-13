@@ -8,16 +8,16 @@
 <body>
   <div class="crt-overlay"></div>
   <div class="crt-content">
-
+<button class="close-button" onclick="goBack()">×</button>
   <div class="window">
 
     <div class="title-bar">
-      <span>📝 Haunted Notes - Notepad.exe</span>
+      <span>Haunted Notes - Notepad.exe</span>
     </div>
 
     <div class="content">
       <textarea id="noteInput" placeholder="Type your haunted message here..."></textarea>
-      <button onclick="leaveNote()">Leave Note 👻</button>
+      <button onclick="leaveNote()">Leave Note </button>
 
       <hr />
 
@@ -45,7 +45,7 @@
     }
 
     async function loadNotes() {
-      const res = await fetch("/notes?os=hauntos");
+      const res = await fetch("/get-notes?os=hauntos");
       const data = await res.json();
 
       const box = document.getElementById("notesDisplay");
@@ -55,6 +55,9 @@
     }
 
     loadNotes();
+    function goBack() {
+        window.location.href = "/hmain";
+      }
   </script>
 </body>
 </html>

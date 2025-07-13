@@ -8,6 +8,8 @@
   <body>
     <div class="crt-overlay"></div>
     <div class="crt-content">
+       <button class="close-button" onclick="goBack()">×</button>
+
       <h1 class="logo">Haunt Browser </h1>
       <div class="browser">
         <div class="top-bar">
@@ -27,6 +29,7 @@
 
     <script>
       async function submitQuery() {
+     
         const input = document.getElementById("searchInput");
         const resultArea = document.getElementById("resultArea");
         const againPrompt = document.getElementById("againPrompt");
@@ -63,6 +66,9 @@
         document.getElementById("resultArea").innerHTML =
           "<i>Type your query above and hit search.</i>";
         document.getElementById("againPrompt").style.display = "none";
+      }
+        function goBack() {
+        window.location.href = "/hmain";
       }
     </script>
   </body>
