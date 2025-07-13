@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>haunt-os</title>
+    <link rel="stylesheet" href="/static/css/hmain.css">
+</head>
+<body>
+    <div id="item">
+        <div id="required-icon">
+            <div id="icon1">
+                <img src="/static/assets/folder.png" alt="folder"/>
+                <div class="icon-label">DO NOT<br>OPEN</div>
+            </div>
+            <div id="icon2">
+                <img src="/static/assets/browser.png" alt="browser"/>
+                <div class="icon-label2">WEB<br>BROWSER</div>
+            </div>
+            <div id="icon3">
+                <img src="/static/assets/musicplayer.png " alt="musicplayer"/>
+                <div class="icon-label2">MUSIC<br>PLAYER</div>
+            </div>
+            <div id="icon4">
+                <img src="/static/assets/notes.png" alt="notes"/>
+                <div class="icon-label2">NOTES</div>
+            </div>
+            <div id="icon5">
+                <img src="/static/assets/folder.png" alt="my work" style="margin: -27px 10px 2px;"/>
+                <div class="icon-label">MY WORK</div>
+            </div>
+        </div>
+        <div id="taskbar">
+            <div class="taskbar-icons">
+                <div class="ghost">
+                <img src="/static/assets/ghost.png" alt="ghost"/>
+                </div>
+                <div class="setting">
+                <img src="/static/assets/settings.png" alt="setting"/>
+                </div>
+                <div class="gallery">
+                <img src="/static/assets/gallery.png" alt="gallery"  style="height: 40px;"/>
+                </div>
+            </div>
+        </div>
+    </div> 
+  <div id="dno-box">
+    <div class="dno-bar">
+          <button onclick="closeDialog()">x</button>
+          <h3>DO NOT OPEN</h3>
+    </div>
+    <p>>> Accessed by  the user<br>
+>> You Should Not Be Here<br>
+>> <b>DO NOT TRUST THE SYSTEM</b><br>
+>> Or else...<br>
+>>
+</p>
+    </div>
+<div id="mp-box">
+    <div class="mp-bar">
+          <button onclick="closeDialog()">x</button>
+          <h3>MUSIC PLAYER</h3>
+    </div>
+</div> 
+<script>
+  // Show dialog when icon1 is clicked
+  document.getElementById("icon1").addEventListener("click", function () {
+    document.getElementById("dno-box").style.display = "block";
+  });
+  document.getElementById("icon3").addEventListener("click", function () {
+    document.getElementById("mp-box").style.display = "block";
+  });
+
+  // Hide dialog when close button is clicked
+  function closeDialog() {
+    document.getElementById("dno-box").style.display = "none";
+    document.getElementById("mp-box").style.display = "none";
+  }
+</script>   
+</body>
+</html>
