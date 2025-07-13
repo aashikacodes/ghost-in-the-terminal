@@ -271,6 +271,9 @@ button{
   color: red;
 }
 
+#dno-box, #mp-box {
+  display: none;
+}
 p{
 color: #83DA92;
 font-family: "Pixelify Sans";

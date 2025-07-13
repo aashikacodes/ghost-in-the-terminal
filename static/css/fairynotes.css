@@ -97,10 +97,13 @@ button:hover {
   animation: flicker 3s infinite;
   padding: 40px;
 }
+.window {
+  position: relative;
+}
 .close-button {
   position: absolute;
-  top: 55px;
-  right: 20px;
+  top: 10px;
+  left: 50px;
   background: transparent;
   border: none;
   font-size: 28px;
