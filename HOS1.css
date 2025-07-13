@@ -98,7 +98,8 @@ html, body {
   animation: typing 2s steps(40, end) forwards;
   animation-delay: calc(var(--i) * 1.2s);
   margin-bottom: 15px;
-  animation-play-state: paused;
+review_this
+  animation-play-state: paused; main
 }
 
 .boot-text p:nth-child(1) { --i: 0; }
