@@ -78,7 +78,7 @@ footer {
   padding: 10px;
 }
 
-/* Hover Glow Effect */
+
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px #00ffff;

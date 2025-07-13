@@ -20,7 +20,9 @@ def hos1():
 @app.route("/hmain")
 def hmain():
     return render_template("Hmain.html")
-
+@app.route("/win7")
+def win7():
+    return render_template("win7.html")
 @app.route("/macos")
 def macos():
     return render_template("macos.html")
