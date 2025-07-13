@@ -15,7 +15,7 @@ html, body{
 #item{
     width:100vw;
     height:100vh;
-    background:url("assets/background.png") lightgray -17.564px -17.757px / 103.379% 119.675% no-repeat;
+    background:url("/static/assets/background.png") lightgray -17.564px -17.757px / 103.379% 119.675% no-repeat;
     position:relative;
     overflow:hidden;
 }

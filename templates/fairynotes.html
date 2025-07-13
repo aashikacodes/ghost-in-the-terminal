@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HauntOS Notes</title>
+  <link rel="stylesheet" href="/static/css/fairynotes.css" />
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <div class="crt-content">
+
+  <div class="window">
+
+    <div class="title-bar">
+      <span>📝 Haunted Notes - Notepad.exe</span>
+    </div>
+
+    <div class="content">
+      <textarea id="noteInput" placeholder="Type your haunted message here..."></textarea>
+      <button onclick="leaveNote()">Leave Note 👻</button>
+
+      <hr />
+
+      <h3>Ghost Notes Discovered:</h3>
+      <div id="notesDisplay" class="notes-box">
+        <p>Loading notes...</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    async function leaveNote() {
+      const content = document.getElementById("noteInput").value;
+
+      if (!content.trim()) return alert("Please write something!");
+
+      await fetch("/leave", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: content, os: "hauntos" })
+      });
+
+      document.getElementById("noteInput").value = "";
+      loadNotes();
+    }
+
+    async function loadNotes() {
+      const res = await fetch("/notes?os=hauntos");
+      const data = await res.json();
+
+      const box = document.getElementById("notesDisplay");
+      box.innerHTML = data.notes.length
+        ? data.notes.map(n => `<p>🗒️ ${n.content}</p>`).join("")
+        : "<p>No notes left behind yet...</p>";
+    }
+
+    loadNotes();
+  </script>
+</body>
+</html>
