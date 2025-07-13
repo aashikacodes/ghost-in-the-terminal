@@ -20,7 +20,7 @@ google-generativeai
 This project already includes the .env file with the Gemini API key for demonstration purposes.
 
 ### ✅ 4. Run the Flask App
-python app.py
+python app.py (enter this command in terminal)
 The app will start running locally on:
 http://127.0.0.1:5000
 
