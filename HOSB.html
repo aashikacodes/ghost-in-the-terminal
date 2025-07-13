@@ -50,7 +50,7 @@
           });
 
           const data = await response.json();
-          resultArea.innerHTML = `<b>You asked:</b> "${userQuery}"<br><br><b>AI Response:</b><br>${data.response}`;
+          resultArea.innerHTML = `<b>You asked:</b> "${userQuery}"<br><br><b>Results:</b><br>${data.response}`;
           againPrompt.style.display = "block";
         } catch (error) {
           resultArea.innerHTML = "Error fetching response.";
