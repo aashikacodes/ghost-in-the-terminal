@@ -224,6 +224,7 @@ html, body{
   width: 595px;
   height: 395px;
   flex-shrink: 0;
+  display: none;
 }
 
 .dno-bar{
@@ -244,6 +245,7 @@ background: #808080;
   width: 595px;
   height: 395px;
   flex-shrink: 0;
+  display: none;
 }
 
 .mp-bar{
