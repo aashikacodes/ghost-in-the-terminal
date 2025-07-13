@@ -244,8 +244,24 @@ background: #808080;
   width: 595px;
   height: 395px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }
-
+.mp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;     
+  width: 100%;      
+}
+.cassette-img {
+  width: 300px;
+  margin: -60px 0 0 0;  
+}
 .mp-bar{
 margin: 0;
 padding: 0;
@@ -254,7 +270,7 @@ flex-shrink: 0;
 background: #808080;
 }
 
-/* Close Button */
+
 button{
   position: absolute;
   top:5px;
@@ -290,3 +306,4 @@ h3{
   padding:5px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
