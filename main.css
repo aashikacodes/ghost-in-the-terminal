@@ -17,9 +17,9 @@
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 45px;
       color: #00ffff;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       text-shadow: 0 0 8px #00ffff;
     }
 
@@ -27,22 +27,22 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 25px;
       max-width: 1600px;
-      padding: 0 2px;
+      padding:15px;
       margin-top:350;
     }
 
     .os-card {
       background-color: #121b2f;
-      border-radius: 10px;
+      border-radius: 25px;
       border:2px solid #00ffff;
       padding: 16px 12px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       position: relative;
-      transition: all 0.2s ease;
+      transition: all 0.7s ease;
       width:300px;
       overflow: hidden;
       height:240px;
@@ -50,13 +50,13 @@
     }
 
     os-card:hover {
-       background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
       transform: translateY(-4px);
-      box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
     }
 
     .os-card img{
-        width: 150px;
+      width: 150px;
       height: 150px;
       object-fit: contain;
       margin-bottom: 2px;
@@ -68,22 +68,25 @@
     }
 
     .os-name {
-     font-size: 16px;
+     font-size: 20px;
       font-weight: bold;
       margin-bottom: 6px;
       color: #ffffff;
     }
 
     .tagline {
-       font-size: 13px;
+      font-size: 15px;
       color: #b0c4ff;
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     footer {
-      margin-top: 350px;
-      font-size: 12px;
+      margin-top:350px;
+      font-size: 15px;
       color: #5fc3ff;
-
+      padding: 10px;
+      
     }
 
 @keyframes glow {

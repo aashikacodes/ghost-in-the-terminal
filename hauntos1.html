@@ -54,6 +54,9 @@
           console.warn("Typing sound failed:", e);
         });
 
+        document.querySelectorAll('.boot-text p')
+        .forEach(el => el.style.animationPlayState = 'running');
+
         const totalLines = document.querySelectorAll(".boot-text p").length;
         const typingDuration = 2 * 1000;
         const delayPerLine = 1.2 * 1000;
